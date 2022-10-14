@@ -1,0 +1,49 @@
+# agv param
+agv_length: 0.8
+agv_width: 0.6
+
+#lidar_param
+#if only one lidar, lidar_link is the same as the base_link
+laser_base_offset_x: 0
+laser_base_offset_y: 0
+laser_base_offset_a: 0
+
+#obstacle avoidance
+laser_obstacle_detect_range: 8
+safe_distance: 0.6
+
+repeat_goal: false
+tc_videal: 1.0 #0.6
+
+
+
+# docking param
+dock_detection_range: 2
+pattern_angle: 1.57
+pattern_width: 1.0
+pattern_height: 1.2
+base2end_dist: 0.5 #lidar2end_dist+0.5*agv_length
+ac_parallel_tolerance: 0.1
+detect_angle_tolerance: 0.2
+detect_line_tolerance: 0.2
+detect_bline_tolerance: 0.1
+group_dist_tolerance: 0.1
+pose_error_tolerance: 0.01
+laser_frame_id: "lidar_link"
+
+dock_base_frame_id: "base_link"
+dock_min_v: 0.1
+dock_min_w: 0.05
+dock_max_v: 0.3
+dock_max_w: 0.3
+dock_angle_error: 0.05
+dock_threshold_v: 0.3
+dock_threshold_w: 0.4
+dist_to_dock: 0.03
+dist_to_center: 0.04  #error allowed to final position y direction
+dock_wait_time: 3
+dock_out_time: 5
+dock_out_speed: 0.3
+
+
+
