@@ -12,11 +12,6 @@ laser_base_offset_a: 0
 laser_obstacle_detect_range: 8
 safe_distance: 0.6
 
-repeat_goal: false
-tc_videal: 1.0 #0.6
-
-
-
 # docking param
 dock_detection_range: 2
 pattern_angle: 1.57
