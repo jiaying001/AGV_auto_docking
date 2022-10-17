@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<launch>
+   <arg name="use_joystick" default = "true"/>
+
+    <include file="$(find four_macnum_simulation)/launch/nexus_4wd_macnum_simulation.launch">
+    </include>
+    <include file="$(find four_macnum_slam)/launch/four_macnum_slam.launch">
+    </include>
+    <include file="$(find four_macnum_bringup)/launch/rviz.launch">
+    </include>
+
+    <node pkg="teleop_twist_keyboard" type="teleop_twist_keyboard.py" name="teleop" output="screen" unless="$(arg use_joystick)">
+    </node>
+
+    <include file="$(find joystick_driver)/launch/sim_joy.launch" if="$(arg use_joystick)">
+    </include>
+
+</launch>
