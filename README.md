@@ -25,7 +25,7 @@ AGV auto docking in gazebo：
  - methods 1: PID control
  
  `` roslaunch auto_dock auto_dock_PIDcontrol.launch  ``
- - methods 2: move_base control (hormonic robot)
+ - methods 2: move_base control (holonomic robot)
  
  `` roslaunch auto_dock auto_dock_movebase_control.launch  ``
  - methods 3: self write docking control
