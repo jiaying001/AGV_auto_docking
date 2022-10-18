@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<launch>
+
+  <!--- Run move base -->
+  <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
+    <!--<remap from="cmd_vel" to="mbctrl_cmd_vel"/>-->
+    <param name="controller_frequency" value="2"/>
+
+    <!-- Use the dwa local planner-->
+    <param name="base_local_planner" value="dwa_local_planner/DWAPlannerROS" />
+
+    <!--- load common configuration files -->
+    <rosparam file="$(find auto_dock)/config/costmap_common_params.yaml" command="load" ns="global_costmap" />
+    <rosparam file="$(find auto_dock)/config/costmap_common_params.yaml" command="load" ns="local_costmap" />
+
+    <!--- load global navigation specific parameters -->
+    <rosparam file="$(find auto_dock)/config/local_costmap_params.yaml" command="load" ns="local_costmap" />
+    <rosparam file="$(find auto_dock)/config/global_costmap_params.yaml" command="load" ns="global_costmap" />
+    <rosparam file="$(find auto_dock)/config/base_local_planner_params.yaml" command="load"/>
+
+    <!--- load planner parameters -->
+    <!--rosparam file="$(find aitech_task)/config/dwa_local_planner.yaml" command="load" ns="DWAPlannerROS" /-->
+  </node>
+
+</launch>

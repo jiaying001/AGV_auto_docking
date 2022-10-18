@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<launch>
+
+ <include file="$(find auto_dock)/launch/move_base.launch" />
+  <node pkg="auto_dock" type="sendgoal" name="GoalSender" output="screen"/>
+
+</launch>

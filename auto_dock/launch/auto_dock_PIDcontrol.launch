@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<launch>
+
+ <node pkg="auto_dock" type="PID_controller" name="PID_controller" output="screen"/>
+
+</launch>

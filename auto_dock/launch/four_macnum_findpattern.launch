@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<launch>
+   <arg name="use_joystick" default = "true"/>
+   <arg name="use_keyboard" default = "false"/>
+
+    <include file="$(find auto_dock)/launch/four_macnum_simulation.launch">
+    </include>
+    <include file="$(find auto_dock)/launch/rviz.launch">
+    </include>
+    <include file="$(find auto_dock)/launch/find_pattern.launch">
+    </include> 
+
+    <node pkg="teleop_twist_keyboard" type="teleop_twist_keyboard.py" name="teleop" output="screen" if="$(arg use_keyboard)">
+    </node>
+
+    <group if="$(arg use_joystick)">
+    	<node pkg="joystick_driver" name="joy_node" type="joy_node" >
+	<param name="joy_node/dev" value="/dev/input/js0"/>
+       </node>
+        <node pkg="joystick_driver" name="joy_ctrl_node" type="joy_ctrl_node" >
+       </node>
+    
+    </group>  
+
+</launch>

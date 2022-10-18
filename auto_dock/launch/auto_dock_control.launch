@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<launch>
+
+  <node pkg="auto_dock" type="controller" name="controller" output="screen">
+  <rosparam file="$(find param)/param_list.yaml" command="load"/>" 
+  </node>
+
+</launch>

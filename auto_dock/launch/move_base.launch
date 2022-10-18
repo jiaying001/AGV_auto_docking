@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<launch>
+
+  <!--- Run move base -->
+  <include file="$(find auto_dock)/launch/include/move_base.xml" />
+
+</launch>
